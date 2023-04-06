@@ -1,0 +1,83 @@
+<div class="container">
+  <div class="content">
+    <div class="button-content">
+      <button
+        [ngClass]="researchButton"
+        mat-raised-button
+        [ngStyle]="{ backgroundColor: '#01B0F3', color: 'white' }"
+      >
+        Đồ án <fa-icon size="2x" [icon]="appIcon.faBookOpen"></fa-icon>
+      </button>
+    </div>
+    <div class="button-content">
+      <button
+        class="button"
+        mat-raised-button
+        [ngStyle]="customButtonColor('#019259', 'white')"
+      >
+        Sinh viên <fa-icon size="2x" [icon]="appIcon.faPerson"></fa-icon>
+      </button>
+    </div>
+    <div class="button-content">
+      <button
+        class="button"
+        mat-raised-button
+        [ngStyle]="{ backgroundColor: '#FF9C0A', color: 'white' }"
+      >
+        Giáo viên <fa-icon size="2x" [icon]="appIcon.faGraduationCap"></fa-icon>
+      </button>
+    </div>
+    <div class="button-content">
+      <button
+        class="button"
+        mat-raised-button
+        [ngStyle]="customButtonColor('#E85835', 'white')"
+      >
+        {{ currentDate$ | async | date : "dd/MM/yyyy HH:mm:ss" }}
+        <fa-icon size="2x" [icon]="appIcon.faClock"></fa-icon>
+      </button>
+    </div>
+    <div class="center-content">
+      <div class="date-content">
+        <p>Bắt đầu</p>
+        <mat-form-field appearance="fill">
+          <mat-label>Choose a date</mat-label>
+          <input
+            matInput
+            [value]="currentDate$ | async | date : 'dd/MM/yyyy'"
+            [matDatepicker]="beginDate"
+            placeholder="Choose a date"
+          />
+          <mat-datepicker-toggle
+            matSuffix
+            [for]="beginDate"
+          ></mat-datepicker-toggle>
+          <mat-datepicker #beginDate></mat-datepicker>
+        </mat-form-field>
+      </div>
+      <div class="date-content">
+        <p>Kết thúc</p>
+        <mat-form-field appearance="fill">
+          <mat-label>Choose a date</mat-label>
+          <input
+            matInput
+            [matDatepicker]="endDate"
+            placeholder="Choose a date"
+          />
+          <mat-datepicker-toggle
+            matSuffix
+            [for]="endDate"
+          ></mat-datepicker-toggle>
+          <mat-datepicker #endDate></mat-datepicker>
+        </mat-form-field>
+      </div>
+    </div>
+  </div>
+  <button
+    mat-raised-button
+    class="center-button"
+    [ngStyle]="customButtonColor('#60BDF1', 'white')"
+  >
+    <p>Cập nhật</p>
+  </button>
+</div>

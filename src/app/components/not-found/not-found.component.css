@@ -1,0 +1,112 @@
+
+html{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+}
+
+.container{
+    align-items: center;
+    min-height: 100vh;
+    width: 100vw;
+    position: relative;
+    background-color: aquamarine;
+}
+
+li{
+    list-style-type: none;
+}
+
+.content{
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    transform: translate(-50%, 40%);
+}
+
+.content img{
+    width: 600px;
+    height: 500px;
+    object-fit: cover;
+    margin-bottom: 40px;
+    -webkit-user-drag: none;
+    -khtml-user-drag: none;
+    -moz-user-drag: none;
+    -o-user-drag: none;
+    user-select: none;
+}
+
+.content .title{
+    font-weight: 500;
+    line-height: 1.5;
+    margin-bottom: 40px;
+    font-size: 30px;
+    -webkit-user-drag: none;
+    -khtml-user-drag: none;
+    -moz-user-drag: none;
+    -o-user-drag: none;
+    user-select: none;
+
+}
+
+.buttonContent{
+    padding-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.button {
+    appearance: none;
+    /* background-image: radial-gradient(100% 100% at 100% 0, #5adaff 0, #5468ff 100%); */
+    border: 0;
+    border-radius: 6px;
+    box-shadow: rgba(45, 35, 66, .4) 0 2px 4px, rgba(45, 35, 66, .3) 0 7px 13px -3px, rgba(58, 65, 111, .5) 0 -3px 0 inset;
+    cursor: pointer;
+    height: 60px;
+    list-style: none;
+    overflow: hidden;
+    text-align: center;
+    text-decoration: none;
+    transition: box-shadow .15s, transform .15s;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    white-space: nowrap;
+    will-change: box-shadow, transform;
+    font-size: 18px;
+    width: 500px;
+    color: white !important;
+    background-color: #23434E !important;
+}
+
+.button:focus {
+    box-shadow: #23434E 0 0 0 1.5px inset, rgba(45, 35, 66, .4) 0 2px 4px, rgba(45, 35, 66, .3) 0 7px 13px -3px, #23434E 0 -3px 0 inset;
+}
+
+.button:hover {
+    box-shadow: rgba(45, 35, 66, .4) 0 4px 8px, rgba(45, 35, 66, .3) 0 7px 13px -3px, #23434E 0 -3px 0 inset;
+    transform: translateY(-2px);
+}
+
+.button:active {
+    box-shadow: #23434E 0 3px 7px inset;
+    transform: translateY(2px);
+}
+
+@media (max-width: 1280px) {
+
+    .content img{
+        width: 300px;
+        height: 300px;
+    }
+
+    .content .title{
+        font-size: 25px;
+    }
+
+    .button{
+        height: 50px;
+        width: 300px;
+    }
+}

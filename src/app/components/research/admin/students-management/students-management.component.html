@@ -1,0 +1,76 @@
+<form>
+  <div [ngClass]="methodAction">
+    <mat-form-field appearance="outline" [ngClass]="inputField">
+      <mat-label>Nhập tìm kiếm</mat-label>
+      <input
+        type="text"
+        matInput
+        [(ngModel)]="searchText"
+        name="searchText"
+        (keyup)="applyFilter(searchText)"
+      />
+      <mat-icon matSuffix>search</mat-icon>
+    </mat-form-field>
+    <mat-form-field appearance="outline" [ngClass]="inputField">
+      <mat-label>Lọc</mat-label>
+      <mat-select
+        [(ngModel)]="selectedOption"
+        name="selectedOption"
+        (selectionChange)="filterStudentResearch(selectedOption)"
+      >
+        <mat-option value="default">Mặc định</mat-option>
+        <mat-option value="nonGuidance"
+          >Sinh viên chưa có giảng viên hướng dẫn</mat-option
+        >
+        <mat-option value="guidance"
+          >Sinh viên đã có giảng viên hướng dẫn</mat-option
+        >
+      </mat-select>
+    </mat-form-field>
+    <button mat-raised-button [routerLink]="'[/add-new-student]'">Thêm</button>
+  </div>
+  <div *ngIf="this.loader.getLoading()" class="cssload-container">
+    <div class="cssload-speeding-wheel"></div>
+  </div>
+  <div class="table-data">
+    <h1>Danh Sách Sinh Viên</h1>
+    <table
+      mat-table
+      [dataSource]="dataSource!"
+      class="mat-elevation-z8"
+      [ngStyle]="{ margin: '0' }"
+    >
+      <ng-container matColumnDef="Số thứ tự">
+        <th mat-header-cell *matHeaderCellDef>Số thứ tự</th>
+        <td mat-cell *matCellDef="let element">
+          {{ element?.grade.id }}
+        </td>
+      </ng-container>
+      <ng-container matColumnDef="Tên sinh viên">
+        <th mat-header-cell *matHeaderCellDef>Tên sinh viên</th>
+        <td mat-cell *matCellDef="let element">{{ element?.fullName }}</td>
+      </ng-container>
+      <!-- Weight Column -->
+      <ng-container matColumnDef="Lớp">
+        <th mat-header-cell *matHeaderCellDef>Lớp</th>
+        <td mat-cell *matCellDef="let element">{{ element.grade?.name }}</td>
+      </ng-container>
+
+      <!-- Symbol Column -->
+      <ng-container matColumnDef="Tên đồ án">
+        <th mat-header-cell *matHeaderCellDef>Tên đồ án</th>
+        <td mat-cell *matCellDef="let element">
+          {{ element.graduationThesis?.nameGraduationThesis }}
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="Kỳ">
+        <th mat-header-cell *matHeaderCellDef>Kỳ</th>
+        <td mat-cell *matCellDef="let element">{{ element?.internship }}</td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+    </table>
+  </div>
+</form>

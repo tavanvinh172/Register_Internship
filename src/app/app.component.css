@@ -1,0 +1,36 @@
+.sidenav-title{
+    width: 26vw;
+    background-color: #fff;
+}
+
+.content-sidenav{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 20px;
+}
+
+p{
+    padding-top: 10px;
+    font-size: 2em;
+}
+
+img{
+    width: 50%;
+    object-fit: cover;
+}
+
+mat-toolbar-row{
+    display: flex;
+    justify-content: space-between;
+}
+
+mat-nav-list a{
+    color: #fff;
+    text-align: justify;
+}
+
+fa-icon{
+    padding-right: 10px;
+}

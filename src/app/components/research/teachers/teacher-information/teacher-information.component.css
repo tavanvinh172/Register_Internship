@@ -1,0 +1,51 @@
+form{
+    border: 2px solid #000;
+    margin: 5vw 10vw;
+    width: 80%;
+    
+}
+
+.title{
+    text-align: center;
+    background-color: #D9D9D9;
+    border-bottom: 2px solid #000;
+}
+
+.main-content img{
+    width: 7vw;
+}
+
+.mat-form-field{
+    width: 100%;
+}
+
+.gender{
+    width: 50%;
+    padding-top: 62px;
+}
+
+.main-content{
+    display: flex;
+    padding-top: 50px;
+    margin-left: 20px;
+    justify-content: start;
+    align-items: center;
+}
+
+.content{
+    display: flex;
+    padding-right: 30px;
+    align-items: center;
+    width: 100%;
+    flex-direction: column;
+}
+
+.bottom-content{
+    display: flex;
+    padding-left: 138px;
+    padding-bottom: 50px;
+}
+
+.bottom-form-field{
+    width: 28%;
+}

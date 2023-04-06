@@ -1,0 +1,20 @@
+.method-action{
+    display: flex;
+    padding-top: 100px;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.input-field{
+    width: 30%;
+}
+
+.table-data{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+    transform: translateX(12%);
+    height: 700px;
+    overflow: scroll;
+}

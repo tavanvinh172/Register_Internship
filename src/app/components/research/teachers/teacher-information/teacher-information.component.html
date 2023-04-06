@@ -1,0 +1,52 @@
+<form>
+  <h1 class="title">Thông tin cá nhân</h1>
+  <div class="main-content">
+    <div class="content">
+      <img src="{{ userModel?.urlImg }}" alt="" />
+      <mat-form-field class="gender" appearance="outline">
+        <mat-label>Giới tính</mat-label>
+        <input type="text" matInput value="{{ userModel?.gender }}" />
+      </mat-form-field>
+    </div>
+    <div class="content">
+      <mat-form-field class="mat-form-field" appearance="outline">
+        <mat-label>Họ và tên</mat-label>
+        <input type="text" matInput value="{{ userModel?.fullName }}" />
+      </mat-form-field>
+      <mat-form-field class="mat-form-field" appearance="outline">
+        <mat-label>Ngày sinh</mat-label>
+        <input
+          type="text"
+          matInput
+          value="{{ userModel?.dateOfBirth | date : 'dd/MM/yyyy' }}"
+        />
+      </mat-form-field>
+      <mat-form-field class="mat-form-field" appearance="outline">
+        <mat-label>Số điện thoại</mat-label>
+        <input type="text" matInput value="{{ userModel?.phoneNumber }}" />
+      </mat-form-field>
+    </div>
+    <div class="content">
+      <mat-form-field class="mat-form-field" appearance="outline">
+        <mat-label>Căn cước</mat-label>
+        <input type="text" matInput value="{{ userModel?.idNumber }}" />
+      </mat-form-field>
+      <mat-form-field class="mat-form-field" appearance="outline">
+        <mat-label>Nơi sinh</mat-label>
+        <input type="text" matInput value="{{ userModel?.address }}" />
+      </mat-form-field>
+      <mat-form-field class="mat-form-field" appearance="outline">
+        <mat-label>Email</mat-label>
+        <input type="text" matInput value="{{ userModel?.email }}" />
+      </mat-form-field>
+    </div>
+  </div>
+  <hr />
+  <div class="bottom-content">
+    <mat-form-field class="bottom-form-field" appearance="outline">
+      <mat-label>Mã giáo viên</mat-label>
+      <input type="text" matInput value="{{ userModel?.id }}" />
+    </mat-form-field>
+  </div>
+</form>
+<button class="button" mat-raised-button color="primary">Đổi mật khẩu</button>
